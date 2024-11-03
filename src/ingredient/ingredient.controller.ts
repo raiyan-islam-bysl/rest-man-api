@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { IngredientService } from './ingredient.service';
-import { Ingredient } from './entities/ingredient.entity';
+import { Ingredient } from './entity/ingredient.entity';
 
 @Controller('ingredient')
 export class IngredientController {

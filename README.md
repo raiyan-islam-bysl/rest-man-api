@@ -45,22 +45,22 @@ $ npm run start:dev -- -b swc
 $ nest g resource
 ```
 
-## Generate Migration
+## Create Migration File
 
 ```bash
-$ npm run migration:generate -- -n CreateIngredientsTable
+$ npm run migration:generate --name=your_migration_name
 ```
 
 ## Run Migrations
 
 ```bash
-$ npx typeorm migration:run -d src/database/data-source.ts
+$ npm run migration:run
 ```
 
 ## Rollback Migrations
 
 ```bash
-$ npx typeorm migration:revert
+$ npm run migration:revert
 ```
 
 ## Resources
