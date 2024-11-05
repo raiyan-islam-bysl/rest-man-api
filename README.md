@@ -48,7 +48,7 @@ $ nest g resource
 ## Create Migration File
 
 ```bash
-$ npm run migration:generate --name=your_migration_name
+$ npm run migration:generate --name=your-migration-name
 ```
 
 ## Run Migrations
