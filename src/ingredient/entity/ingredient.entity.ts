@@ -34,6 +34,8 @@ export class Ingredient {
   })
   updatedAt: Date;
 
-  @DeleteDateColumn({ type: 'timestamp', nullable: true })
+  @DeleteDateColumn({
+    type: 'timestamp', nullable: true
+  })
   deletedAt?: Date;
 }

@@ -1,11 +1,7 @@
 import {
-  Controller,
-  Get,
-  Post,
-  Put,
-  Body,
-  Param,
-  Delete,
+  Controller, Get,
+  Post, Put, Body,
+  Param, Delete,
 } from '@nestjs/common';
 import { IngredientService } from './ingredient.service';
 import { Ingredient } from './entity/ingredient.entity';

@@ -11,7 +11,8 @@ export class CreateIngredientsTable1730791859313 implements MigrationInterface {
         "description" character varying, 
         "isActive" boolean NOT NULL, 
         "createdAt" TIMESTAMP NOT NULL DEFAULT ('now'::text)::timestamp(6) with time zone, 
-        "updatedAt" TIMESTAMP NOT NULL DEFAULT ('now'::text)::timestamp(6) with time zone, "deletedAt" TIMESTAMP, 
+        "updatedAt" TIMESTAMP NOT NULL DEFAULT ('now'::text)::timestamp(6) with time zone, 
+        "deletedAt" TIMESTAMP, 
         CONSTRAINT "PK_6f1e945604a0b59f56a57570e98" PRIMARY KEY ("id"))`,
     );
   }

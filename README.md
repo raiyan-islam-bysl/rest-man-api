@@ -42,7 +42,7 @@ $ npm run start:dev -- -b swc
 ## Generate CRUD
 
 ```bash
-$ nest g resource
+$ nest g resource your-module-name
 ```
 
 ## Create Migration File
