@@ -11,7 +11,10 @@ const config = {
   username: `${process.env.DATABASE_USERNAME}`,
   password: `${process.env.DATABASE_PASSWORD}`,
   database: `${process.env.DATABASE_NAME}`,
-  entities: [__dirname + '/../**/*.entity.{js,ts}'],
+  entities: [
+    __dirname + '/../**/*.entity.{js,ts}',
+    __dirname + '/../**/*.entities.{js,ts}',
+  ],
   migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
   synchronize: false,
   migrationsRun: true,
