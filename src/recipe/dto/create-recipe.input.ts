@@ -2,6 +2,9 @@ import { InputType, Int, Field } from '@nestjs/graphql';
 
 @InputType()
 export class CreateRecipeInput {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+  @Field(() => String, { description: 'Name of Recipe' })
+  name: string;
+
+  @Field(() => String, { description: 'Description of Recipe' })
+  description: string;
 }

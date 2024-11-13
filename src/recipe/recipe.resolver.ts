@@ -9,14 +9,26 @@ export class RecipeResolver {
   constructor(private readonly recipeService: RecipeService) {}
 
   @Mutation(() => Recipe)
-  createRecipe(@Args('createRecipeInput') createRecipeInput: CreateRecipeInput) {
+  createRecipe(
+    @Args('createRecipeInput') createRecipeInput: CreateRecipeInput,
+  ) {
     return this.recipeService.create(createRecipeInput);
   }
 
-  @Query(() => [Recipe], { name: 'recipe' })
-  findAll() {
+  @Query(() => [Recipe], { name: 'allrecipe' })
+  async findAll() {
     return this.recipeService.findAll();
   }
+
+  // @Query(() => [User])
+  // //@Args('limit') limit: number
+  // async getUsers() {
+  //   //return mockUsers;
+  //   return this.userService.getUsers();
+  //
+  //
+  //
+  // }
 
   @Query(() => Recipe, { name: 'recipe' })
   findOne(@Args('id', { type: () => Int }) id: number) {
@@ -24,7 +36,9 @@ export class RecipeResolver {
   }
 
   @Mutation(() => Recipe)
-  updateRecipe(@Args('updateRecipeInput') updateRecipeInput: UpdateRecipeInput) {
+  updateRecipe(
+    @Args('updateRecipeInput') updateRecipeInput: UpdateRecipeInput,
+  ) {
     return this.recipeService.update(updateRecipeInput.id, updateRecipeInput);
   }
 
