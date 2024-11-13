@@ -28,7 +28,10 @@
       "db:refresh": "npm run typeorm:cli schema:drop && npm run migration:run && npm run seed:run"
    },
    "dependencies": {
+      "@apollo/gateway": "^2.9.3",
+      "@as-integrations/fastify": "^2.1.1",
       "@fastify/formbody": "^8.0.1",
+      "@nestjs/apollo": "^12.2.1",
       "@nestjs/common": "^10.0.0",
       "@nestjs/config": "^3.3.0",
       "@nestjs/core": "^10.0.0",

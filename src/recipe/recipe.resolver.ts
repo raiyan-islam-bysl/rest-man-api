@@ -1,34 +1,35 @@
-import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { RecipeService } from './recipe.service';
+import { Recipe } from './entities/recipe.entity';
 import { CreateRecipeInput } from './dto/create-recipe.input';
 import { UpdateRecipeInput } from './dto/update-recipe.input';
 
-@Resolver('Recipe')
+@Resolver(() => Recipe)
 export class RecipeResolver {
   constructor(private readonly recipeService: RecipeService) {}
 
-  @Mutation('createRecipe')
-  create(@Args('createRecipeInput') createRecipeInput: CreateRecipeInput) {
+  @Mutation(() => Recipe)
+  createRecipe(@Args('createRecipeInput') createRecipeInput: CreateRecipeInput) {
     return this.recipeService.create(createRecipeInput);
   }
 
-  @Query('recipe')
+  @Query(() => [Recipe], { name: 'recipe' })
   findAll() {
     return this.recipeService.findAll();
   }
 
-  @Query('recipe')
-  findOne(@Args('id') id: number) {
+  @Query(() => Recipe, { name: 'recipe' })
+  findOne(@Args('id', { type: () => Int }) id: number) {
     return this.recipeService.findOne(id);
   }
 
-  @Mutation('updateRecipe')
-  update(@Args('updateRecipeInput') updateRecipeInput: UpdateRecipeInput) {
+  @Mutation(() => Recipe)
+  updateRecipe(@Args('updateRecipeInput') updateRecipeInput: UpdateRecipeInput) {
     return this.recipeService.update(updateRecipeInput.id, updateRecipeInput);
   }
 
-  @Mutation('removeRecipe')
-  remove(@Args('id') id: number) {
+  @Mutation(() => Recipe)
+  removeRecipe(@Args('id', { type: () => Int }) id: number) {
     return this.recipeService.remove(id);
   }
 }
